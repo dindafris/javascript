@@ -1,0 +1,66 @@
+<script language="javascript">
+
+    var pegawai="Ridwan";
+    var jabatan="Manager";
+    var status="Menikah";
+
+    if(jabatan=="Manager"){
+        gapok=15000000;
+    }
+    else if(jabatan=="Asisten"){
+        gapok=10000000;
+    }
+    else if(jabatan=="Staff"){
+        gapok=5000000;
+    }
+    else{
+        gapok=0;
+    }
+    
+    let tunjanganJabatan = 0.15*gapok;
+    let bpjs = 0.1*gapok;
+    let tunjanganKeluarga = (status=="Menikah") ? 0.2*gapok:0;
+    let total = gapok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+    
+    document.write(
+        `<table border="1" cellpadding="20px" align="center" cellspacing="0"> 
+                <thead> 
+                    <tr bgcolor="#D2DAFF"> 
+                        <th>Nama Pegawai</th> 
+                        <th>Jabatan</th> 
+                        <th>Status</th>
+                        <th colspan="2">Pendapatan</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    <tr> 
+                        <td rowspan="4">${pegawai}</td> 
+                        <td rowspan="4">${jabatan}</td> 
+                        <td rowspan="4">${status}</td> 
+                        <td>Gaji Pokok</td> 
+                        <td>${gapok}</td> 
+                    </tr> 
+                    <tr> 
+                        <td>Tunjangan Jabatan</td> 
+                        <td>${tunjanganJabatan}</td> 
+                    </tr> 
+                    <tr> 
+                        <td>BPJS</td> 
+                        <td>${bpjs}</td> 
+                    </tr> 
+                    <tr> 
+                        <td>Tunjangan Keluarga</td> 
+                        <td>${tunjanganKeluarga}</td> 
+                    </tr> 
+                </tbody> 
+                <tfoot> 
+                    <tr bgcolor="#D2DAFF"> 
+                        <th colspan="4">Total</th> 
+                        <th>${total}</th> 
+                    </tr> 
+                </tfoot> 
+            </table> 
+`
+    
+    )
+</script>
