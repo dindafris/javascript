@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" align="center" cellpadding="10px" cellspacing="0">
+        <thead>
+            <tr>
+                <th colspan="10">DAFTAR PEGAWAI</th>
+            </tr>
+            <tr bgcolor="FFBD74">
+                <th>No</th>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>Agama</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>Tunjangan Kesehatan</th>
+                <th>Gaji Kotor</th>
+                <th>zakat Profesi</th>
+                <th>Take Home Pay</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <script language="javascript">
+                // ketererangan
+                // jab = jabatan 
+                // gp = gaji pokok
+                // gk = gaji kotor
+                // zaprof = zakat profesi
+                // thp = take home pay
+                for (pegawai = 1; pegawai <= 100; pegawai++) {
+                    if (pegawai <= 25) {
+                        jab = "manager";
+                    }
+                    else if (pegawai >= 26 && pegawai <= 50) {
+                        jab = "asisten manager";
+                    }
+                    else if (pegawai >= 51 && pegawai <= 75) {
+                        jab = "supervisor";
+                    }
+                    else if (pegawai >= 76 && pegawai <= 100) {
+                        jab = "staff";
+                    }
+
+                    switch (jab) {
+                        case "manager":
+                            gp = 15000000;
+                            break;
+                        case "asisten manager":
+                            gp = 10000000;
+                            break;
+                        case "manager":
+                            gp = 15000000;
+                            break;
+                        case "supervisor":
+                            gp = 70000000;
+                            break;
+                        case "staff":
+                            gp = 4000000;
+                            break;
+                    }
+
+                    let tJabatan = 20 / 100 * gp;
+                    let tKesehatan = 10 / 100 * gp;
+                    let gk = gp + tJabatan + tKesehatan;
+
+                    agama = (pegawai % 2 == 0) ? "non muslim" : "muslim";
+                    color = (pegawai % 2 == 0) ? "76D3FF" : "FFFA9D";
+
+                    if (agama == "muslim" && gk >= 7000000) {
+                        zaprof = 2.5 / 100 * gk;
+                    }
+                    else {
+                        zaprof = 0;
+                    }
+
+                    let thp = gk - zaprof;
+
+                    document.write(
+                        `<tr bgcolor="${color}">
+                                <td>${pegawai}</td>
+                                <td>Pegawai${pegawai}</td>
+                                <td>${jab}</td>
+                                <td>${agama}</td>
+                                <td>Rp ${gp}</td>
+                                <td>${tJabatan}</td>
+                                <td>Rp ${tKesehatan}</td>
+                                <td>Rp ${gk}</td>
+                                <td>Rp ${zaprof}</td>
+                                <td>Rp ${thp}</td>
+                                `
+                    )
+                }
+
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
