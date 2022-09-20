@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Tugas 6</title>
+</head>
+
+<body>
+    <div style="margin: 40px; text-align: center;">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>no</th>
+                    <th>lokasi</th>
+                    <th>skala</th>
+                    <th>dampak</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    class gempa {
+                        constructor(loc, scale, no) {
+                            this.loc = loc;
+                            this.scale = scale;
+                            this.no = no;
+                        }
+                        dampak() {
+                            if (this.scale <= 2) {
+                                this.dampaknya = "tidak terasa";
+                            }
+                            else if (this.scale > 2 && this.scale <= 4) {
+                                this.dampaknya = "bangunan retak-retak";
+                            }
+                            else if (this.scale > 4 && this.scale <= 6) {
+                                this.dampaknya = "bangunan roboh";
+                            }
+                            else if (this.scale > 6) {
+                                this.dampaknya = "bangunan roboh dan berpotensi tsunami";
+                            }
+                            return this.dampaknya;
+                        }
+                        nomor() {
+
+                        }
+
+                        info() {
+                            document.write(
+                                `
+                            <tr>
+                            <td>${this.no}</td>
+                            <td>${this.loc}</td>
+                            <td>${this.scale}</td>
+                            <td>${this.dampak()}
+                                <td>
+                            `
+                            )
+                        }
+                    }
+                    g1 = new gempa('Makassar', '3', 1);
+                    g1.info();
+                    g2 = new gempa('Jakarta', '7', 2);
+                    g2.info();
+                    g3 = new gempa('Nganjuk', '4', 3);
+                    g3.info();
+                    g3 = new gempa('Palu', '6', 4);
+                    g3.info();
+                    g5 = new gempa('Jember', '2', 5)
+                    g5.info();
+                    g6 = new gempa('Kediri', '1', 6);
+                    g6.info();
+                </script>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
