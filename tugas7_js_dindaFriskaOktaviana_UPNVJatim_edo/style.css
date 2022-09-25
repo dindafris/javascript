@@ -1,0 +1,42 @@
+body {
+    background-color: #ADC2A9;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+i {
+    cursor: pointer;
+    color: #99A799;
+}
+
+i:hover::before {
+    color: #D3E4CD;
+}
+
+
+button {
+    border: none;
+    background-color: #fff;
+}
+
+
+.namaHewan {
+    font-size: 20px;
+    margin: 4px;
+}
+
+img {
+    width: 100%;
+}
+
+.accordion {
+    margin: 5%;
+}
